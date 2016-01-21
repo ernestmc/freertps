@@ -4,7 +4,9 @@
 #if defined(__linux__)
 #include <malloc.h>
 #endif
+#ifndef __ANDROID__
 #include <execinfo.h>
+#endif
 #include "freertps/psm.h"
 
 struct rtps_psm g_rtps_psm;
@@ -32,11 +34,13 @@ static void *freertps_malloc(size_t size, const void *caller)
   void *backtrace_buffer[MAX_DEPTH];
   void *frames[MAX_DEPTH];
   __malloc_hook = g_freertps_prev_malloc_hook;
+#ifndef __ANDROID__
   int stack_depth = backtrace_symbols(backtrace_buffer, MAX_DEPTH);
   char **function_names = backtrace_symbols(backtrace_buffer, MAX_DEPTH);
   printf("malloc(%u) called from %s [%p]\n", 
          (unsigned)size, function_names[0], backtrace_buffer[0]);
   free(function_names);
+#endif
   void *mem = malloc(size);
   __malloc_hook = freertps_malloc;
   return mem;

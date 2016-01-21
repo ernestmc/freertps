@@ -11,6 +11,10 @@
 // TYPES
 /////////////////////////////////////////////////////////////////////
 
+#ifdef __ANDROID__
+typedef __in_port_t in_port_t;
+#endif
+
 typedef struct
 {
   uint8_t major;

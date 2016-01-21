@@ -1,6 +1,8 @@
 #!/bin/sh
 
-export PATH=$PATH:/home/ecorbellini/Android/android-ndk
+NDK_PATH=/home/ecorbellini/Android/android-ndk
+
+export PATH=$PATH:$NDK_PATH
 
 export NDK_PROJECT_PATH=$(dirname $0)
 
