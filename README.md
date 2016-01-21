@@ -13,8 +13,8 @@ We use the posix version and add [this implementation](https://github.com/morris
 of ifaddrs library for Android.
 
 1. Download and install [Android NDK](http://developer.android.com/tools/sdk/ndk/index.html)
-2. Edit the ```android_build.sh``` file and set the ```NDK_PATH``` to 
+2. Edit the `android_build.sh` file and set the `NDK_PATH` to 
 point to the path where your NDK is installed.
-3. Run ```./android_build.sh```
-4. If everything goes well you can find the resulting library located in ```obj/local/armeabi/libfreertps_lib.a```
+3. Run `./android_build.sh`
+4. If everything goes well you can find the resulting library located in `obj/local/armeabi/libfreertps_lib.a`
 
