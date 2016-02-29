@@ -9,7 +9,7 @@ We will build freertp as a static library that later will be linked to
 a JNI wrapper and converted into a shared library to dynamically load into 
 our Android project.
 
-We use the posix version and add [this implementation](https://github.com/morristech/android-ifaddrs) 
+We use the posix version and add [this implementation](https://github.com/michalsrb/android-ifaddrs) 
 of ifaddrs library for Android.
 
 1. Download and install [Android NDK](http://developer.android.com/tools/sdk/ndk/index.html)
